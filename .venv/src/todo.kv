@@ -130,9 +130,25 @@ BoxLayout:
         padding: 10
         spacing: 10
 
+        # 1) 캐릭터 이미지
+        Image:
+            id: char_img
+            source: app.char_states['egg']
+            size_hint_y: 0.7
 
+        # 2) 달성도 프로그레스바
+        ProgressBar:
+            id: char_progress
+            max: app.threshold_grown
+            value: app.completed_count
+            size_hint_y: None
+            height: '20dp'
 
+        # 3) 달성도 텍스트
         Label:
-            text: '캐릭터 상세 정보'
+            id: char_label
+            text: str(app.completed_count) + '/' + str(app.threshold_grown)
             font_name: 'GangwonEdu'
-            font_size: '20sp'
+            size_hint_y: None
+            height: '30dp'
+
