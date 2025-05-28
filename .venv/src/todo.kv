@@ -21,7 +21,7 @@ BoxLayout:
             on_press: sm.current = 'main'
 
         Button:
-            text: '뽀모도로'
+            text: '뽀모도로 타이머'
             font_name: 'GangwonEdu'
             on_press: sm.current = 'pomodoro'
 
@@ -47,7 +47,7 @@ BoxLayout:
 
             TextInput:
                 id: task_input
-                hint_text: '할 일을 입력해'
+                hint_text: '일단 하자'
                 font_name: 'GangwonEdu'
                 multiline: False
                 on_text_validate: app.add_task(self.text)
@@ -72,9 +72,49 @@ BoxLayout:
     name: 'pomodoro'
     BoxLayout:
         orientation: 'vertical'
-        padding: 10
-        spacing: 10
+        padding: 20
+        spacing: 20
 
+        # 상단 제목
+        Label:
+            text: '25분 뽀모도로 타이머'
+            font_name: 'GangwonEdu'
+            font_size: '24sp'
+            size_hint_y: None
+            height: '40dp'
+            color: 0,0,0,1
+
+        # 가운데 큰 타이머
+        Label:
+            id: timer_label
+            text: ''
+            font_name: 'GangwonEdu'
+            font_size: '72sp'
+            halign: 'center'
+            valign: 'middle'
+            color: 0,0,0,1
+            size_hint_y: None
+            height: '120dp'
+            text_size: self.size
+
+        # 컨트롤 버튼
+        BoxLayout:
+            size_hint_y: None
+            height: '60dp'
+            spacing: 10
+
+            Button:
+                text: '시작'
+                font_name: 'GangwonEdu'
+                on_press: app.start_timer()
+            Button:
+                text: '일시정지'
+                font_name: 'GangwonEdu'
+                on_press: app.stop_timer()
+            Button:
+                text: '리셋'
+                font_name: 'GangwonEdu'
+                on_press: app.reset_timer()
 
 
         Label:
