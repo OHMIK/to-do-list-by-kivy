@@ -1,0 +1,22 @@
+# created by virtualenv automatically
+# — Python 가상환경(vENV) 디렉토리
+/Lib/
+/Scripts/
+/share/
+
+# — 파이썬 컴파일 캐시
+__pycache__/
+*.pyc
+
+# — IDE 설정
+.idea/
+/.vscode/
+
+# — 환경 변수·비밀키
+.env
+
+# — Kivy 빌드 결과물 (buildozer 등)
+build/
+dist/
+*.apk
+*.spec
